@@ -1,0 +1,35 @@
+#include<iostream>
+#include"string.h"
+using namespace std;
+//char s2[20];
+void copystring ( char s[], char s2[])
+{
+	int i=0;
+	while(s[i]!='\0')
+	{
+		s2[i]=s[i];
+		i++;
+	}
+	s2[i]='\0';
+}
+int lengthstring(char s[],int len)
+{
+	int i=0;
+	len=0;
+	for(i=0;s[i]!='\0';i++)
+	{
+		len++;
+	}
+	cout<<"the length of string is "<<len<<endl;
+	return len;
+}
+void reversestring(char s[])
+{
+	int len = lengthstring(s,len);
+	cout<<"string ";
+	for(int i=len-1;i>=0;i--)
+	{
+		cout<<s[i];
+	}
+}
+
