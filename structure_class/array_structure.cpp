@@ -25,6 +25,8 @@ int main()
         {
                 cout<<" Roll no "<<st[i].rollno;
                 cout<<" name "<<st[i].name<<endl;
+		cout<<"address of each "<<&st[i].rollno<<endl;
+		
         }
 	return 0;
 }
