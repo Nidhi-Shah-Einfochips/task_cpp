@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 int count;
 class ticket
@@ -9,14 +10,18 @@ class ticket
     string name[5];
     int age[5];
     int n;
+    map<int,string> passenger;
+    int i;
     void reservation()
     {
         cout<<"welcme to reservation window"<<endl;
+        
         do
         {
             
             cout<<"1. add passenger"<<endl;
-            cout<<"2.exit"<<endl;
+            cout<<"2. delete passenger"<<endl;
+            cout<<"3. exit "<<endl;
             cin>>ch;
             switch (ch)
             {
@@ -25,12 +30,11 @@ class ticket
                 cin>>n;
                 if(count<5)
                 {
-                    for(int i=0;i<n;i++)
+                    for(i=1;i<=n;i++)
                     {
                         cout<<"passenger name"<<endl;
                         cin>>name[i];
-                        cout<<"age"<<endl;
-                        cin>>age[i];
+                        passenger[i]=name[i];
                         count++;
                     }
                 }
@@ -40,6 +44,12 @@ class ticket
                 }
                     break;
             case 2:
+                cout<<"delete the passenger"<<endl;
+                cout<<"enter the seat no. you want to delete"<<endl;
+                cin>>i;
+                //passenger.erase[i];
+                break;
+            case 3:
                 cout<<"exit"<<endl;
                 break;
             default:
@@ -50,14 +60,14 @@ class ticket
         
             
             
-        } while (ch!=2);
+        } while (ch!=3);
     }
     void show()
     {
-        for(int i=0;i<n;i++)
+        for(int i=1;i<=n;i++)
         {
-            cout<<"passenger name  "<<name[i]<<endl;
-            cout<<"age  "<<age[i]<<endl;
+            cout<<i<<" "<<name[i]<<endl;
+            
         }
     }
 
